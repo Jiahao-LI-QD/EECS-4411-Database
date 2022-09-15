@@ -1,0 +1,10 @@
+                                                QUERY PLAN
+-----------------------------------------------------------------------------------------------------------
+ Merge Join  (cost=0.87..23914379.73 rows=1298938634 width=44)
+   Merge Cond: (p1.custid = p2.custid)
+   Join Filter: (p1.whenp <> p2.whenp)
+   ->  Index Scan using stl_purchase_pk on purchase p1  (cost=0.43..583419.65 rows=9996076 width=22)
+         Index Cond: (custid > 10)
+   ->  Materialize  (cost=0.43..583455.39 rows=9997204 width=22)
+         ->  Index Scan using stl_purchase_pk on purchase p2  (cost=0.43..558462.38 rows=9997204 width=22)
+(7 rows)

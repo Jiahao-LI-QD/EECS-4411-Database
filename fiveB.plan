@@ -1,0 +1,11 @@
+                                        QUERY PLAN                                        
+------------------------------------------------------------------------------------------
+ Nested Loop  (cost=24.67..13313.53 rows=93 width=44)
+   ->  Bitmap Heap Scan on purchase p1  (cost=24.24..3660.88 rows=1007 width=22)
+         Recheck Cond: (custid < 10)
+         ->  Bitmap Index Scan on stl_purchase_pk  (cost=0.00..23.99 rows=1007 width=0)
+               Index Cond: (custid < 10)
+   ->  Index Scan using stl_purchase_pk on purchase p2  (cost=0.43..9.58 rows=1 width=22)
+         Index Cond: ((custid = p1.custid) AND (whenp = p1.whenp))
+(7 rows)
+

@@ -1,0 +1,8 @@
+                            QUERY PLAN                            
+------------------------------------------------------------------
+ HashAggregate  (cost=1151.17..1151.36 rows=15 width=41)
+   Group Key: genre
+   ->  Seq Scan on book  (cost=0.00..1069.00 rows=16434 width=15)
+         Filter: (price > '88'::numeric)
+(4 rows)
+

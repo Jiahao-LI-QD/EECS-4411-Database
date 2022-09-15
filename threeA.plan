@@ -1,0 +1,9 @@
+                                         QUERY PLAN                                          
+---------------------------------------------------------------------------------------------
+ Nested Loop  (cost=0.72..448.93 rows=1799 width=60)
+   ->  Index Scan using stl_book_pk on book b  (cost=0.29..40.45 rows=9 width=38)
+         Index Cond: (bookid < 10)
+   ->  Index Scan using stl_pur_ind_book on purchase p  (cost=0.43..37.87 rows=752 width=22)
+         Index Cond: (bookid = b.bookid)
+(5 rows)
+

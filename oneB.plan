@@ -1,0 +1,6 @@
+                        QUERY PLAN                         
+-----------------------------------------------------------
+ Seq Scan on book  (cost=0.00..1069.00 rows=49999 width=4)
+   Filter: (bookid <> 10)
+(2 rows)
+

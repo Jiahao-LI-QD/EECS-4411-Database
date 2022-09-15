@@ -1,0 +1,10 @@
+                                 QUERY PLAN                                  
+-----------------------------------------------------------------------------
+ GroupAggregate  (cost=1202.61..1204.45 rows=15 width=41)
+   Group Key: genre
+   ->  Sort  (cost=1202.61..1203.16 rows=221 width=15)
+         Sort Key: genre
+         ->  Seq Scan on book  (cost=0.00..1194.00 rows=221 width=15)
+               Filter: ((price > '88'::numeric) AND (price < '89'::numeric))
+(6 rows)
+
